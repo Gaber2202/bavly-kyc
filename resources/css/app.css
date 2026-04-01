@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Tajawal', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-gold: #d4af37;
+    --color-gold-dim: #b4922b;
+    --color-surface: #0a0a0a;
+    --color-surface-elevated: #141414;
+}
+
+@layer base {
+    body {
+        @apply bg-zinc-950 text-zinc-100 antialiased;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+}
+
+@layer components {
+    .btn-gold {
+        @apply inline-flex items-center justify-center rounded-lg bg-[#d4af37] px-4 py-2 text-sm font-semibold text-zinc-950 shadow transition hover:bg-[#b4922b] focus:outline-none focus:ring-2 focus:ring-[#d4af37]/40 disabled:cursor-not-allowed disabled:opacity-50;
+    }
+
+    .btn-outline-gold {
+        @apply inline-flex items-center justify-center rounded-lg border border-[#d4af37]/50 px-4 py-2 text-sm font-semibold text-[#d4af37] transition hover:border-[#d4af37] hover:bg-[#d4af37]/10 focus:outline-none focus:ring-2 focus:ring-[#d4af37]/30;
+    }
+
+    .input-dark {
+        @apply w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-zinc-100 shadow-inner placeholder:text-zinc-500 focus:border-[#d4af37]/60 focus:outline-none focus:ring-1 focus:ring-[#d4af37]/40;
+    }
+
+    .label-dark {
+        @apply mb-1 block text-sm font-medium text-zinc-300;
+    }
+
+    .card {
+        @apply rounded-xl border border-zinc-800 bg-zinc-900/80 p-6 shadow-xl backdrop-blur;
+    }
+
+    .sidebar-link {
+        @apply flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-zinc-300 transition hover:bg-zinc-800 hover:text-[#d4af37];
+    }
+
+    .sidebar-link-active {
+        @apply bg-[#d4af37]/15 text-[#d4af37];
+    }
+}
