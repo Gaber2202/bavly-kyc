@@ -4,6 +4,8 @@ Target repo: `https://github.com/Gaber2202/bavly-kyc` (branch `main`).
 
 This app is **Laravel 12**: PHP **8.3+**, **Composer**, **MySQL**, and a **Vite** build for assets. On Hostinger, use **SSH + Git** when possible; the drag-and-drop Git panel varies by plan.
 
+**Master checklist (PHP extensions, `.env`, queues, rollback, testing):** [DEPLOYMENT.md](DEPLOYMENT.md)
+
 ---
 
 ## 1. Before you start

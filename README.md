@@ -2,6 +2,8 @@
 
 نظام Laravel 12 داخلي لإدارة نماذج KYC باللغة العربية وواجهة RTL بثيم أسود/ذهبي، مع صلاحيات **مدير** و**موظف**، وجداول تحليلات، وتصدير Excel. معدّ للنشر على استضافة مثل Hostinger (PHP 8.3+، MySQL).
 
+**النشر الإنتاجي (قائمة تحقق، أوامر، أمان، تراجع، استكشاف أخطاء):** [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
+
 ## المتطلبات
 
 - PHP 8.3+
@@ -106,7 +108,10 @@ composer run dev
 
 ## النشر على Hostinger (إرشادات)
 
-دليل مفصّل من مستودع Git (SSH، Document root إلى `public`، مفاتيح النشر، بناء الأصول): **[docs/DEPLOY_HOSTINGER.md](docs/DEPLOY_HOSTINGER.md)**
+المخطط الكامل والتحقق من الإنتاج: **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)** — ثم:
+
+- استضافة مشتركة + Git: **[docs/DEPLOY_HOSTINGER.md](docs/DEPLOY_HOSTINGER.md)**  
+- VPS Ubuntu (Nginx، MySQL، PHP-FPM، SSL): **[docs/DEPLOY_HOSTINGER_VPS_UBUNTU.md](docs/DEPLOY_HOSTINGER_VPS_UBUNTU.md)**
 
 1. أنشئ قاعدة MySQL من لوحة Hostinger وصدّر القيم إلى `.env`.
 2. اسحب المشروع بـ `git clone` أو نشر Git من hPanel؛ **اجعل جذر الموقع (Document root) = مجلد `public`** داخل المشروع وليس جذر المستودع.

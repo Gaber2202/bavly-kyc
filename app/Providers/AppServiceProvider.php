@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
 
@@ -28,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
         $locale = (string) config('app.locale');
         App::setLocale($locale);
         Carbon::setLocale($locale);
+
+        if (str_starts_with((string) config('app.url'), 'https://')) {
+            URL::forceScheme('https');
+        }
 
         Gate::policy(KycRecord::class, KycRecordPolicy::class);
         Gate::policy(User::class, UserPolicy::class);
