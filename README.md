@@ -106,9 +106,11 @@ composer run dev
 
 ## النشر على Hostinger (إرشادات)
 
+دليل مفصّل من مستودع Git (SSH، Document root إلى `public`، مفاتيح النشر، بناء الأصول): **[docs/DEPLOY_HOSTINGER.md](docs/DEPLOY_HOSTINGER.md)**
+
 1. أنشئ قاعدة MySQL من لوحة Hostinger وصدّر القيم إلى `.env`.
-2. ارفع الملفات (أو Git deploy) إلى المجلد العام للدومين؛ اجعل جذر الويب يشير إلى مجلد `public` (أو عدّل document root في الإعدادات).
-3. على الخادم:
+2. اسحب المشروع بـ `git clone` أو نشر Git من hPanel؛ **اجعل جذر الموقع (Document root) = مجلد `public`** داخل المشروع وليس جذر المستودع.
+3. على الخادم (بعد `composer install` و`npm run build` أو رفع `public/build`):
 
 ```bash
 composer install --no-dev --optimize-autoloader
